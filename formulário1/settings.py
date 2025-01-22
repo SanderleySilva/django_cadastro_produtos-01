@@ -56,7 +56,10 @@ ROOT_URLCONF = 'formulário1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [
+            BASE_DIR / 'templates',  # Diretório global de templates
+            BASE_DIR / 'aplicação' / 'templates',  # Adicionando a pasta de templates da app
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +71,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'formulário1.wsgi.application'
 
